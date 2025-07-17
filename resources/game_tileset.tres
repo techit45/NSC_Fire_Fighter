@@ -1,0 +1,42 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://0cvoegnfmce0"]
+
+[ext_resource type="Texture2D" uid="uid://kvvl3x7bqqcp" path="res://assets/spr_tileset_sunnysideworld_16px.png" id="1_tileset"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1"]
+resource_name = "main_tileset"
+texture = ExtResource("1_tileset")
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/custom_data_0 = "GRASS"
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/custom_data_0 = "CONCRETE_FLOOR"
+2:0/0 = 0
+2:0/0/terrain_set = 1
+2:0/0/terrain = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0/custom_data_0 = "CONCRETE_WALL"
+2:0/0/custom_data_1 = true
+3:0/0 = 0
+3:0/0/terrain_set = 2
+3:0/0/terrain = 0
+3:0/0/custom_data_0 = "FIRE_DAMAGE"
+
+[resource]
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Floor"
+terrain_set_0/terrain_0/color = Color(0.5, 0.5, 0.5, 1)
+terrain_set_1/mode = 0
+terrain_set_1/terrain_0/name = "Wall"
+terrain_set_1/terrain_0/color = Color(0.7, 0.7, 0.7, 1)
+terrain_set_2/mode = 0
+terrain_set_2/terrain_0/name = "Damage"
+terrain_set_2/terrain_0/color = Color(0.8, 0.2, 0.2, 1)
+custom_data_layer_0/name = "tile_type"
+custom_data_layer_0/type = 4
+custom_data_layer_1/name = "blocks_movement"
+custom_data_layer_1/type = 1
+sources/0 = SubResource("TileSetAtlasSource_1")

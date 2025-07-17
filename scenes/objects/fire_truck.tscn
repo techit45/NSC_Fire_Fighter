@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://c17nteyvhx"]
+
+[ext_resource type="Script" path="res://scripts/objects/fire_truck.gd" id="1_m4k7n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1m8k5"]
+size = Vector2(140, 80)
+
+[node name="FireTruck" type="Area2D" groups=["Interactables"]]
+script = ExtResource("1_m4k7n")
+
+[node name="TruckSprite" type="Polygon2D" parent="."]
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-70, -40, 70, -40, 70, 40, -70, 40)
+
+[node name="TruckCab" type="Polygon2D" parent="."]
+color = Color(0.8, 0, 0, 1)
+polygon = PackedVector2Array(-70, -40, -30, -40, -30, 40, -70, 40)
+
+[node name="TruckBody" type="Polygon2D" parent="."]
+color = Color(0.9, 0.9, 0.9, 1)
+polygon = PackedVector2Array(-25, -35, 65, -35, 65, 35, -25, 35)
+
+[node name="Ladder" type="Polygon2D" parent="."]
+color = Color(0.7, 0.7, 0.7, 1)
+polygon = PackedVector2Array(-15, -30, 55, -30, 55, -20, -15, -20)
+
+[node name="Hose" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-15, 10, 55, 10, 55, 20, -15, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1m8k5")

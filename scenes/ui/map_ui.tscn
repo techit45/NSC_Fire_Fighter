@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5yam8k2p4q1j"]
+
+[ext_resource type="Script" path="res://scripts/ui/map_ui.gd" id="1_k8m3p"]
+
+[node name="MapUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_k8m3p")
+
+[node name="MapPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -300.0
+offset_right = 350.0
+offset_bottom = 300.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MapPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+
+[node name="TitleLabel" type="Label" parent="MapPanel/VBoxContainer"]
+layout_mode = 2
+text = "แผนที่ประเทศไทย - เลือกภารกิจ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerLevelLabel" type="Label" parent="MapPanel/VBoxContainer"]
+layout_mode = 2
+text = "ระดับผู้เล่น: 1"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MapPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MissionList" type="ItemList" parent="MapPanel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DescriptionLabel" type="Label" parent="MapPanel/VBoxContainer"]
+layout_mode = 2
+text = "เลือกภารกิจเพื่อดูรายละเอียด"
+autowrap_mode = 2
+vertical_alignment = 1
+
+[node name="SelectButton" type="Button" parent="MapPanel/VBoxContainer"]
+layout_mode = 2
+text = "เลือกภารกิจนี้"
+
+[node name="CloseButton" type="Button" parent="MapPanel/VBoxContainer"]
+layout_mode = 2
+text = "ปิด"

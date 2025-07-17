@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2wax8k1m5q7p"]
+
+[ext_resource type="Script" path="res://scripts/npcs/fire_chief_npc.gd" id="1_m8n2k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1p5j9"]
+size = Vector2(40, 60)
+
+[node name="FireChiefNPC" type="Area2D" groups=["NPCs"]]
+script = ExtResource("1_m8n2k")
+
+[node name="NPCSprite" type="Polygon2D" parent="."]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-20, -30, 20, -30, 20, 30, -20, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1p5j9")

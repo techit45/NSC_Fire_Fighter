@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://irxx1eb5d46t"]
+
+[ext_resource type="Script" uid="uid://dhonc5mcytc0m" path="res://scripts/tileset_creator.gd" id="1_creator"]
+
+[node name="TilesetCreator" type="Node2D"]
+script = ExtResource("1_creator")
+
+[node name="Camera2D" type="Camera2D" parent="."]

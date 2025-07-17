@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7n4k8x2m5qaq"]
+
+[ext_resource type="Script" path="res://scripts/ui/player_stats_ui.gd" id="1_j9k2m"]
+
+[node name="PlayerStatsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 120.0
+script = ExtResource("1_j9k2m")
+
+[node name="StatsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="LevelLabel" type="Label" parent="StatsContainer"]
+layout_mode = 2
+text = "ระดับ: 1"
+
+[node name="MoneyLabel" type="Label" parent="StatsContainer"]
+layout_mode = 2
+text = "เงิน: 1000 บาท"
+
+[node name="ExperienceLabel" type="Label" parent="StatsContainer"]
+layout_mode = 2
+text = "EXP: 0/100"
+
+[node name="HealthLabel" type="Label" parent="StatsContainer"]
+layout_mode = 2
+text = "พลังชีวิต: 100"

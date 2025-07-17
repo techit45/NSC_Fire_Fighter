@@ -1,0 +1,228 @@
+[gd_scene load_steps=29 format=3 uid="uid://b5m7c4ewq8o7x"]
+
+[ext_resource type="Script" uid="uid://byjg1deg66kth" path="res://scripts/objects/player.gd" id="1_y8v0o"]
+[ext_resource type="Texture2D" uid="uid://bxbkppp4awv1x" path="res://assets/mainChr.png" id="2_mainChr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2147m"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5uus"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54rde"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8hb4"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksjmp"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rlf8"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ay4w"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuhu7"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c2uj"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dunks"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68atb"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lybl"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uaar"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2iaiu"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae4o8"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4pvk"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(512, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcc4x"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(640, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37b34"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(768, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfdn7"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(896, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeqme"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(1024, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3mv4"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(1152, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyf6x"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(1280, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dywr"]
+atlas = ExtResource("2_mainChr")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_player"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2147m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5uus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54rde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8hb4")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksjmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rlf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ay4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuhu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c2uj")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dunks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68atb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lybl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uaar")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2iaiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ae4o8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4pvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcc4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37b34")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfdn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xeqme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3mv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyf6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dywr")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1v8k4"]
+radius = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2h9j5"]
+radius = 75.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_y8v0o")
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_player")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1v8k4")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_2h9j5")
+
+[node name="InteractionPrompt" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = -40.0
+text = "Press SPACE"
+horizontal_alignment = 1

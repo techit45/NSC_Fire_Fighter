@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://cp7sh7u7t3bp"]
+
+[ext_resource type="Script" uid="uid://b422yr3xdpp3r" path="res://scripts/gameplay/fire_station_scene.gd" id="1_enhanced"]
+[ext_resource type="PackedScene" uid="uid://b5m7c4ewq8o7x" path="res://scenes/objects/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://c2wax8k1m5q7p" path="res://scenes/npcs/fire_chief_npc.tscn" id="3_chief"]
+[ext_resource type="PackedScene" uid="uid://c7n5lam3x8q2w" path="res://scenes/objects/equipment_table.tscn" id="4_equipment"]
+[ext_resource type="PackedScene" uid="uid://cnx8k4m7q2wap" path="res://scenes/objects/computer_terminal.tscn" id="5_computer"]
+[ext_resource type="PackedScene" uid="uid://cam2k5x8q3n7w" path="res://scenes/objects/map_board.tscn" id="6_map"]
+[ext_resource type="PackedScene" uid="uid://c17nteyvhx" path="res://scenes/objects/fire_truck.tscn" id="7_truck"]
+[ext_resource type="PackedScene" uid="uid://c8m4kan6vx2o1" path="res://scenes/ui/dialogue_manager.tscn" id="8_dialogue"]
+[ext_resource type="PackedScene" uid="uid://b4nak2j8x5p1q" path="res://scenes/ui/shop_ui.tscn" id="9_shop"]
+[ext_resource type="PackedScene" uid="uid://ej810y00ysax" path="res://scenes/ui/inventory_ui.tscn" id="10_inventory"]
+[ext_resource type="PackedScene" uid="uid://c5yam8k2p4q1j" path="res://scenes/ui/map_ui.tscn" id="11_mapui"]
+[ext_resource type="PackedScene" uid="uid://b7n4k8x2m5qaq" path="res://scenes/ui/player_stats_ui.tscn" id="12_stats"]
+
+[node name="FireStationScene" type="Node2D"]
+script = ExtResource("1_enhanced")
+
+[node name="StationEnvironment" type="Node2D" parent="."]
+
+[node name="Walls" type="Polygon2D" parent="StationEnvironment"]
+color = Color(0.5, 0.5, 0.5, 1)
+polygon = PackedVector2Array(50, 150, 650, 150, 650, 450, 50, 450, 50, 400, 100, 400, 100, 200, 600, 200, 600, 400, 50, 400)
+
+[node name="Floor" type="Polygon2D" parent="StationEnvironment"]
+color = Color(0.7, 0.7, 0.7, 1)
+polygon = PackedVector2Array(100, 200, 600, 200, 600, 400, 100, 400)
+
+[node name="FirePole" type="Polygon2D" parent="StationEnvironment"]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(180, 200, 190, 200, 190, 400, 180, 400)
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(150, 350)
+
+[node name="InteractionPoints" type="Node2D" parent="."]
+
+[node name="FireChiefNPC" parent="InteractionPoints" instance=ExtResource("3_chief")]
+position = Vector2(300, 250)
+
+[node name="EquipmentTable" parent="InteractionPoints" instance=ExtResource("4_equipment")]
+position = Vector2(200, 320)
+
+[node name="ComputerTerminal" parent="InteractionPoints" instance=ExtResource("5_computer")]
+position = Vector2(400, 230)
+
+[node name="MapBoard" parent="InteractionPoints" instance=ExtResource("6_map")]
+position = Vector2(250, 200)
+
+[node name="FireTruck" parent="InteractionPoints" instance=ExtResource("7_truck")]
+position = Vector2(500, 330)
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueManager" parent="UILayer" instance=ExtResource("8_dialogue")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopUI" parent="UILayer" instance=ExtResource("9_shop")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryUI" parent="UILayer" instance=ExtResource("10_inventory")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MapUI" parent="UILayer" instance=ExtResource("11_mapui")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerStatsUI" parent="UILayer" instance=ExtResource("12_stats")]
+grow_horizontal = 0
+
+[node name="InstructionLabel" type="Label" parent="UILayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -100.0
+offset_right = 400.0
+offset_bottom = -20.0
+text = "🟡 หัวหน้า - คำแนะนำและภารกิจ
+🟤 โต๊ะอุปกรณ์ - จัดการเครื่องมือ
+🔵 คอมพิวเตอร์ - ซื้ออุปกรณ์
+🟢 แผนที่ - เลือกภารกิจ
+🔴 รถดับเพลิง - เริ่มภารกิจ"
+vertical_alignment = 1

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c26y3p05t3cy"]
+
+[ext_resource type="Script" uid="uid://dggaynnuqlla5" path="res://scripts/npcs/mother_npc.gd" id="1_j6k8l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n4m7"]
+size = Vector2(40, 60)
+
+[node name="MotherNPC" type="Area2D" groups=["NPCs"]]
+script = ExtResource("1_j6k8l")
+
+[node name="NPCSprite" type="Polygon2D" parent="."]
+color = Color(0, 0.8, 0, 1)
+polygon = PackedVector2Array(-20, -30, 20, -30, 20, 30, -20, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1n4m7")

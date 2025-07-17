@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://cam2k5x8q3n7w"]
+
+[ext_resource type="Script" path="res://scripts/objects/map_board.gd" id="1_n8k5m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1p4j6"]
+size = Vector2(100, 60)
+
+[node name="MapBoard" type="Area2D" groups=["Interactables"]]
+script = ExtResource("1_n8k5m")
+
+[node name="BoardSprite" type="Polygon2D" parent="."]
+color = Color(0, 0.8, 0, 1)
+polygon = PackedVector2Array(-50, -30, 50, -30, 50, 30, -50, 30)
+
+[node name="ThailandOutline" type="Polygon2D" parent="."]
+color = Color(0, 0.6, 0, 1)
+polygon = PackedVector2Array(-40, -20, 40, -20, 40, 20, -40, 20)
+
+[node name="BangkokDot" type="Polygon2D" parent="."]
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-5, -5, 5, -5, 5, 5, -5, 5)
+
+[node name="ChiangMaiDot" type="Polygon2D" parent="."]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(-25, -15, -15, -15, -15, -5, -25, -5)
+
+[node name="PhuketDot" type="Polygon2D" parent="."]
+color = Color(0, 0, 1, 1)
+polygon = PackedVector2Array(-25, 5, -15, 5, -15, 15, -25, 15)
+
+[node name="KhonKaenDot" type="Polygon2D" parent="."]
+color = Color(1, 0, 1, 1)
+polygon = PackedVector2Array(15, -15, 25, -15, 25, -5, 15, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1p4j6")

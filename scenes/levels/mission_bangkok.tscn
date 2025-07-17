@@ -1,0 +1,119 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2x5m8laq4n7p"]
+
+[ext_resource type="Script" uid="uid://cvoqen4nhhyq0" path="res://scripts/gameplay/level_01.gd" id="1_mission"]
+[ext_resource type="PackedScene" uid="uid://b5m7c4ewq8o7x" path="res://scenes/objects/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://bb8yb2qkmtjph" path="res://scenes/objects/fire.tscn" id="3_fire"]
+
+[node name="MissionBangkok" type="Node2D"]
+script = ExtResource("1_mission")
+
+[node name="MissionEnvironment" type="Node2D" parent="."]
+
+[node name="MarketFloor" type="Polygon2D" parent="MissionEnvironment"]
+color = Color(0.6, 0.4, 0.2, 1)
+polygon = PackedVector2Array(50, 250, 650, 250, 650, 450, 50, 450)
+
+[node name="MarketStall1" type="Polygon2D" parent="MissionEnvironment"]
+color = Color(0.4, 0.2, 0.1, 1)
+polygon = PackedVector2Array(150, 280, 250, 280, 250, 350, 150, 350)
+
+[node name="MarketStall2" type="Polygon2D" parent="MissionEnvironment"]
+color = Color(0.4, 0.2, 0.1, 1)
+polygon = PackedVector2Array(300, 280, 400, 280, 400, 350, 300, 350)
+
+[node name="MarketStall3" type="Polygon2D" parent="MissionEnvironment"]
+color = Color(0.4, 0.2, 0.1, 1)
+polygon = PackedVector2Array(450, 280, 550, 280, 550, 350, 450, 350)
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(100, 400)
+
+[node name="Fire1" parent="." instance=ExtResource("3_fire")]
+position = Vector2(200, 300)
+fire_type = "CLASS_A"
+correct_tool = "WATER"
+health = 75
+
+[node name="Fire2" parent="." instance=ExtResource("3_fire")]
+position = Vector2(350, 300)
+fire_type = "CLASS_A"
+correct_tool = "WATER"
+health = 100
+
+[node name="Fire3" parent="." instance=ExtResource("3_fire")]
+position = Vector2(500, 300)
+fire_type = "CLASS_A"
+correct_tool = "WATER"
+health = 50
+
+[node name="StationTransition" type="Area2D" parent="."]
+position = Vector2(75, 400)
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ToolLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = -20.0
+text = "Current Tool: WATER"
+
+[node name="HealthLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -80.0
+offset_right = 200.0
+offset_bottom = -50.0
+text = "Health: 100"
+
+[node name="ObjectiveLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 80.0
+text = "ภารกิจ: กรุงเทพฯ - ตลาดเก่า
+ดับไฟ Class A ทั้ง 3 จุด
+ใช้เครื่องดับเพลิงชนิดน้ำ"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="WinLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+text = "ภารกิจสำเร็จ!
+กดเดินไปที่ EXIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible = false
+
+[node name="LoseLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+text = "ภารกิจล้มเหลว!
+พลังชีวิตหมด"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible = false

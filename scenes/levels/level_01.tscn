@@ -1,0 +1,127 @@
+[gd_scene load_steps=5 format=3 uid="uid://cokkjf80y4nha"]
+
+[ext_resource type="Script" uid="uid://cvoqen4nhhyq0" path="res://scripts/gameplay/level_01.gd" id="1_m7h8k"]
+[ext_resource type="PackedScene" uid="uid://b5m7c4ewq8o7x" path="res://scenes/objects/player.tscn" id="2_x9j4n"]
+[ext_resource type="PackedScene" uid="uid://bb8yb2qkmtjph" path="res://scenes/objects/fire.tscn" id="3_k5m2l"]
+
+[node name="Level01" type="Node2D"]
+script = ExtResource("1_m7h8k")
+
+[node name="Player" parent="." instance=ExtResource("2_x9j4n")]
+position = Vector2(100, 300)
+
+[node name="Fire1" parent="." instance=ExtResource("3_k5m2l")]
+position = Vector2(400, 200)
+fire_type = "CLASS_A"
+correct_tool = "WATER"
+
+[node name="Fire2" parent="." instance=ExtResource("3_k5m2l")]
+position = Vector2(600, 300)
+fire_type = "CLASS_C"
+correct_tool = "CO2"
+
+[node name="Fire3" parent="." instance=ExtResource("3_k5m2l")]
+position = Vector2(300, 400)
+fire_type = "CLASS_B"
+correct_tool = "POWDER"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ToolLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = -20.0
+text = "Current Tool: WATER"
+
+[node name="HealthLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -80.0
+offset_right = 200.0
+offset_bottom = -50.0
+text = "Health: 100"
+
+[node name="WinLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+text = "YOU WIN!
+All fires extinguished!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoseLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+text = "GAME OVER!
+Health depleted!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 120.0
+text = "MISSION: Extinguish all fires!
+
+CONTROLS:
+WASD/Arrow Keys - Move
+Q/Tab - Switch Tool
+Space/Enter - Use Tool
+
+FIRE TYPES:
+Red (top) - CLASS_A (WATER)
+Red (right) - CLASS_C (CO2)
+Red (bottom) - CLASS_B (POWDER)"
+vertical_alignment = 1
+
+[node name="StationTransition" type="Area2D" parent="."]
+position = Vector2(100, 200)
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StationTransition"]
+shape = SubResource("RectangleShape2D_1y3k2")
+
+[node name="ReturnLabel" type="Label" parent="StationTransition"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -30.0
+offset_right = 60.0
+offset_bottom = 30.0
+text = "🚪 EXIT
+RETURN TO
+STATION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y3k2"]
+size = Vector2(120, 60)

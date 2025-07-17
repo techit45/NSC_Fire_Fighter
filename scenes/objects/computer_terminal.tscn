@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnx8k4m7q2wap"]
+
+[ext_resource type="Script" path="res://scripts/objects/computer_terminal.gd" id="1_p8m2k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1q7j3"]
+size = Vector2(60, 40)
+
+[node name="ComputerTerminal" type="Area2D" groups=["Interactables"]]
+script = ExtResource("1_p8m2k")
+
+[node name="TerminalSprite" type="Polygon2D" parent="."]
+color = Color(0, 0, 1, 1)
+polygon = PackedVector2Array(-30, -20, 30, -20, 30, 20, -30, 20)
+
+[node name="ScreenSprite" type="Polygon2D" parent="."]
+color = Color(0.8, 0.8, 0.8, 1)
+polygon = PackedVector2Array(-20, -15, 20, -15, 20, 10, -20, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1q7j3")

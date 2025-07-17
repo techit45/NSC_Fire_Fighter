@@ -1,0 +1,111 @@
+[gd_scene load_steps=2 format=3 uid="uid://ej810y00ysax"]
+
+[ext_resource type="Script" path="res://scripts/ui/inventory_ui.gd" id="1_j7k2m"]
+
+[node name="InventoryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_j7k2m")
+
+[node name="InventoryPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
+
+[node name="TitleLabel" type="Label" parent="InventoryPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -480.0
+offset_right = 200.0
+offset_bottom = -460.0
+text = "จัดการอุปกรณ์"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InventoryPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 30.0
+offset_right = -20.0
+offset_bottom = -60.0
+
+[node name="LeftPanel" type="Panel" parent="InventoryPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryPanel/HBoxContainer/LeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="OwnedLabel" type="Label" parent="InventoryPanel/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+text = "อุปกรณ์ที่มี"
+horizontal_alignment = 1
+
+[node name="OwnedList" type="ItemList" parent="InventoryPanel/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EquipButton" type="Button" parent="InventoryPanel/HBoxContainer/LeftPanel/VBoxContainer"]
+layout_mode = 2
+text = "ติดตั้ง"
+
+[node name="RightPanel" type="Panel" parent="InventoryPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryPanel/HBoxContainer/RightPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="EquippedLabel" type="Label" parent="InventoryPanel/HBoxContainer/RightPanel/VBoxContainer"]
+layout_mode = 2
+text = "อุปกรณ์ที่ติดตั้ง"
+horizontal_alignment = 1
+
+[node name="EquippedList" type="ItemList" parent="InventoryPanel/HBoxContainer/RightPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="UnequipButton" type="Button" parent="InventoryPanel/HBoxContainer/RightPanel/VBoxContainer"]
+layout_mode = 2
+text = "ถอด"
+
+[node name="CloseButton" type="Button" parent="InventoryPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -40.0
+offset_right = 50.0
+offset_bottom = -10.0
+text = "ปิด"

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8py673d8dxcp"]
+
+[ext_resource type="Script" uid="uid://ux6eppfrvcmq" path="res://scripts/debug_tileset.gd" id="1_debug"]
+
+[node name="DebugTileset" type="Node2D"]
+script = ExtResource("1_debug")
+
+[node name="Camera2D" type="Camera2D" parent="."]

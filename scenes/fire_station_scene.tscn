@@ -1,0 +1,121 @@
+[gd_scene load_steps=15 format=3 uid="uid://e5b00y0ewvgu"]
+
+[ext_resource type="Script" uid="uid://b422yr3xdpp3r" path="res://scripts/gameplay/fire_station_scene.gd" id="1_enhanced"]
+[ext_resource type="PackedScene" uid="uid://b5m7c4ewq8o7x" path="res://scenes/objects/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://c2wax8k1m5q7p" path="res://scenes/npcs/fire_chief_npc.tscn" id="3_chief"]
+[ext_resource type="PackedScene" uid="uid://c7n5lam3x8q2w" path="res://scenes/objects/equipment_table.tscn" id="4_equipment"]
+[ext_resource type="PackedScene" uid="uid://cnx8k4m7q2wap" path="res://scenes/objects/computer_terminal.tscn" id="5_computer"]
+[ext_resource type="PackedScene" uid="uid://cam2k5x8q3n7w" path="res://scenes/objects/map_board.tscn" id="6_map"]
+[ext_resource type="PackedScene" uid="uid://c17nteyvhx" path="res://scenes/objects/fire_truck.tscn" id="7_truck"]
+[ext_resource type="PackedScene" uid="uid://c8m4kan6vx2o1" path="res://scenes/ui/dialogue_manager.tscn" id="8_dialogue"]
+[ext_resource type="PackedScene" uid="uid://b4nak2j8x5p1q" path="res://scenes/ui/shop_ui.tscn" id="9_shop"]
+[ext_resource type="PackedScene" uid="uid://ej810y00ysax" path="res://scenes/ui/inventory_ui.tscn" id="10_inventory"]
+[ext_resource type="PackedScene" uid="uid://c5yam8k2p4q1j" path="res://scenes/ui/map_ui.tscn" id="11_mapui"]
+[ext_resource type="PackedScene" uid="uid://b7n4k8x2m5qaq" path="res://scenes/ui/player_stats_ui.tscn" id="12_stats"]
+[ext_resource type="Script" uid="uid://p1yy40b01yat" path="res://scripts/systems/tilemap_manager.gd" id="13_tilemap_manager"]
+[ext_resource type="TileSet" uid="uid://dah3e8fm2qaka" path="res://resources/room_builder_tileset.tres" id="14_room_builder_tileset"]
+
+[node name="FireStationScene" type="Node2D"]
+script = ExtResource("1_enhanced")
+
+[node name="TileMapManager" type="Node2D" parent="."]
+script = ExtResource("13_tilemap_manager")
+game_tileset = ExtResource("14_room_builder_tileset")
+
+[node name="FloorLayer" type="TileMap" parent="TileMapManager"]
+tile_set = ExtResource("14_room_builder_tileset")
+format = 2
+layer_0/tile_data = PackedInt32Array(655365, 983040, 6, 262146, 917504, 5, 262147, 983040, 5, 262148, 983040, 5, 262149, 983040, 5, 262150, 983040, 5, 262151, 983040, 5, 262152, 983040, 5, 262153, 983040, 5, 262154, 983040, 5, 262155, 983040, 5, 262156, 983040, 5, 262157, 983040, 5, 262158, 983040, 5, 262159, 917504, 1342177285, 327695, 917504, 805306374, 393231, 917504, 805306374, 458767, 917504, 805306374, 524303, 917504, 805306374, 589839, 917504, 805306374, 655375, 917504, 805306374, 720911, 917504, 805306373, 720910, 983040, 805306373, 720909, 983040, 805306373, 720899, 983040, 805306373, 720900, 983040, 805306373, 720901, 983040, 805306373, 720902, 983040, 805306373, 720903, 983040, 805306373, 720904, 983040, 805306373, 720905, 983040, 805306373, 720906, 983040, 805306373, 720907, 983040, 805306373, 720908, 983040, 805306373, 720898, 917504, 1610612741, 327682, 917504, 6, 393218, 917504, 6, 458754, 917504, 6, 524290, 917504, 6, 589826, 917504, 6, 655362, 917504, 6, 327683, 983040, 6, 393219, 983040, 6, 458755, 983040, 6, 524291, 983040, 6, 589827, 983040, 6, 655363, 983040, 6, 327684, 983040, 6, 393220, 983040, 6, 458756, 983040, 6, 524292, 983040, 6, 589828, 983040, 6, 655364, 983040, 6, 327685, 983040, 6, 393221, 983040, 6, 458757, 983040, 6, 524293, 983040, 6, 589829, 983040, 6, 327686, 983040, 6, 393222, 983040, 6, 458758, 983040, 6, 524294, 983040, 6, 589830, 983040, 6, 655366, 983040, 6, 327687, 983040, 6, 393223, 983040, 6, 458759, 983040, 6, 524295, 983040, 6, 589831, 983040, 6, 655367, 983040, 6, 327688, 983040, 6, 393224, 983040, 6, 458760, 983040, 6, 524296, 983040, 6, 589832, 983040, 6, 655368, 983040, 6, 327689, 983040, 6, 393225, 983040, 6, 458761, 983040, 6, 524297, 983040, 6, 589833, 983040, 6, 655369, 983040, 6, 327690, 983040, 6, 393226, 983040, 6, 458762, 983040, 6, 524298, 983040, 6, 589834, 983040, 6, 655370, 983040, 6, 327691, 983040, 6, 393227, 983040, 6, 458763, 983040, 6, 524299, 983040, 6, 589835, 983040, 6, 655371, 983040, 6, 327692, 983040, 6, 393228, 983040, 6, 458764, 983040, 6, 524300, 983040, 6, 589836, 983040, 6, 655372, 983040, 6, 327693, 983040, 6, 393229, 983040, 6, 458765, 983040, 6, 524301, 983040, 6, 589837, 983040, 6, 655373, 983040, 6, 327694, 983040, 6, 393230, 983040, 6, 458766, 983040, 6, 524302, 983040, 6, 589838, 983040, 6, 655374, 983040, 6)
+
+[node name="WallLayer" type="TileMap" parent="TileMapManager"]
+z_index = 1
+tile_set = ExtResource("14_room_builder_tileset")
+format = 2
+layer_0/tile_data = PackedInt32Array(196610, 0, 18, 131074, 0, 17, 131075, 65536, 17, 196611, 65536, 18, 131076, 65536, 17, 196612, 65536, 18, 131077, 65536, 17, 196613, 65536, 18, 131078, 65536, 17, 196614, 65536, 18, 131079, 65536, 17, 196615, 65536, 18, 131080, 65536, 17, 196616, 65536, 18, 131081, 65536, 17, 196617, 65536, 18, 131082, 65536, 17, 196618, 65536, 18, 131083, 65536, 17, 196619, 65536, 18, 131084, 65536, 17, 196620, 65536, 18, 131085, 65536, 17, 196621, 65536, 18, 131086, 65536, 17, 196622, 65536, 18, 131087, 131072, 17, 196623, 131072, 18, 131088, 851968, 2, 196624, 851968, 2, 262160, 851968, 2, 327696, 851968, 2, 393232, 851968, 2, 458768, 851968, 2, 524304, 851968, 2, 589840, 851968, 2, 655376, 851968, 2, 720912, 851968, 2, 786448, 851968, 3, 786434, 786432, 3, 786435, 786432, 3, 786436, 786432, 3, 786437, 786432, 3, 786438, 786432, 3, 786439, 786432, 3, 786440, 786432, 3, 786441, 786432, 3, 786442, 786432, 3, 786443, 786432, 3, 786444, 786432, 3, 786445, 786432, 3, 786446, 786432, 3, 786447, 786432, 3, 131073, 720896, 2, 196609, 720896, 2, 262145, 720896, 2, 327681, 720896, 2, 393217, 720896, 3, 589825, 720896, 2, 655361, 720896, 2, 720897, 720896, 2, 524289, 851968, 805306371, 786433, 720896, 3)
+
+[node name="InteractiveLayer" type="TileMap" parent="TileMapManager"]
+z_index = 2
+tile_set = ExtResource("14_room_builder_tileset")
+format = 2
+
+[node name="DamageLayer" type="TileMap" parent="TileMapManager"]
+z_index = 3
+tile_set = ExtResource("14_room_builder_tileset")
+format = 2
+
+[node name="TriggerLayer" type="TileMap" parent="TileMapManager"]
+z_index = 4
+tile_set = ExtResource("14_room_builder_tileset")
+format = 2
+
+[node name="StationEnvironment" type="Node2D" parent="."]
+visible = false
+
+[node name="Walls" type="Polygon2D" parent="StationEnvironment"]
+color = Color(0.5, 0.5, 0.5, 1)
+polygon = PackedVector2Array(50, 150, 650, 150, 650, 450, 50, 450, 50, 400, 100, 400, 100, 200, 600, 200, 600, 400, 50, 400)
+
+[node name="Floor" type="Polygon2D" parent="StationEnvironment"]
+color = Color(0.7, 0.7, 0.7, 1)
+polygon = PackedVector2Array(100, 200, 600, 200, 600, 400, 100, 400)
+
+[node name="FirePole" type="Polygon2D" parent="StationEnvironment"]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(180, 200, 190, 200, 190, 400, 180, 400)
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(150, 350)
+
+[node name="InteractionPoints" type="Node2D" parent="."]
+
+[node name="FireChiefNPC" parent="InteractionPoints" instance=ExtResource("3_chief")]
+position = Vector2(329, 525)
+
+[node name="EquipmentTable" parent="InteractionPoints" instance=ExtResource("4_equipment")]
+position = Vector2(147, 544)
+
+[node name="ComputerTerminal" parent="InteractionPoints" instance=ExtResource("5_computer")]
+position = Vector2(469, 216)
+
+[node name="MapBoard" parent="InteractionPoints" instance=ExtResource("6_map")]
+position = Vector2(224, 225)
+
+[node name="FireTruck" parent="InteractionPoints" instance=ExtResource("7_truck")]
+position = Vector2(655, 501)
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="DialogueManager" parent="UILayer" instance=ExtResource("8_dialogue")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopUI" parent="UILayer" instance=ExtResource("9_shop")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryUI" parent="UILayer" instance=ExtResource("10_inventory")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MapUI" parent="UILayer" instance=ExtResource("11_mapui")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerStatsUI" parent="UILayer" instance=ExtResource("12_stats")]
+grow_horizontal = 0
+
+[node name="InstructionLabel" type="Label" parent="UILayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -100.0
+offset_right = 400.0
+offset_bottom = -20.0
+text = "🟡 หัวหน้า - คำแนะนำและภารกิจ
+🟤 โต๊ะอุปกรณ์ - จัดการเครื่องมือ
+🔵 คอมพิวเตอร์ - ซื้ออุปกรณ์
+🟢 แผนที่ - เลือกภารกิจ
+🔴 รถดับเพลิง - เริ่มภารกิจ"
+vertical_alignment = 1

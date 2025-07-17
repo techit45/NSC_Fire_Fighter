@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmvppiyno35ni"]
+
+[ext_resource type="Script" uid="uid://bvicii5oe4t3d" path="res://scripts/simple_tile_test.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://p1yy40b01yat" path="res://scripts/systems/tilemap_manager.gd" id="2_tilemap_manager"]
+[ext_resource type="TileSet" uid="uid://0cvoegnfmce0" path="res://resources/game_tileset.tres" id="3_game_tileset"]
+
+[node name="SimpleTileTest" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TileMapManager" type="Node2D" parent="."]
+script = ExtResource("2_tilemap_manager")
+game_tileset = ExtResource("3_game_tileset")
+
+[node name="FloorLayer" type="TileMap" parent="TileMapManager"]
+tile_set = ExtResource("3_game_tileset")
+format = 2
+
+[node name="WallLayer" type="TileMap" parent="TileMapManager"]
+z_index = 1
+tile_set = ExtResource("3_game_tileset")
+format = 2

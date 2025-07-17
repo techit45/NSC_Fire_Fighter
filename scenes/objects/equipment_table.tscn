@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7n5lam3x8q2w"]
+
+[ext_resource type="Script" path="res://scripts/objects/equipment_table.gd" id="1_m9k4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r8m5"]
+size = Vector2(80, 40)
+
+[node name="EquipmentTable" type="Area2D" groups=["Interactables"]]
+script = ExtResource("1_m9k4n")
+
+[node name="TableSprite" type="Polygon2D" parent="."]
+color = Color(0.4, 0.2, 0.1, 1)
+polygon = PackedVector2Array(-40, -20, 40, -20, 40, 20, -40, 20)
+
+[node name="Equipment1" type="Polygon2D" parent="."]
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(-30, -15, -20, -15, -20, -5, -30, -5)
+
+[node name="Equipment2" type="Polygon2D" parent="."]
+color = Color(0, 0, 1, 1)
+polygon = PackedVector2Array(-10, -15, 0, -15, 0, -5, -10, -5)
+
+[node name="Equipment3" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(10, -15, 20, -15, 20, -5, 10, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1r8m5")
